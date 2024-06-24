@@ -20,9 +20,9 @@
                         on
                         prayer times
                         during your journey</p>
-                    <div class="download-button max-w-fit md:pt-[36px]">
+                    <div class="download-button max-w-fit md:pt-[36px">
                         <a href=""
-                            class="flex gap-[16px] px-[29px] py-[14px] bg-jalur-bold text-black rounded-[50px] border border-black">
+                            class="flex gap-[16px] px-[29px] py-[14px] bg-jalur-bold hover:bg-jalur-base text-black rounded-[50px] border border-black transition-all">
                             <span>Download</span>
                             <img src="/icons/arrow-down.svg" alt="download-icon">
                         </a>
@@ -72,7 +72,11 @@
                     <br>
                     Jalur will recommend the most suitable mosque options for each prayer time along the route.
                 </p>
-                <a href="" class="underline font-semibold md:text-[16px] pb-[56px]">Learn More</a>
+                <a href=""
+                    class="font-[500] md:text-[16px] pb-[56px] hover:text-jalur-base decoration-jalur-base decoration-[2px] w-fit">Learn
+                    More
+                    <hr class="bg-jalur-base h-[3px]">
+                </a>
             </div>
             <div class="flex w-full justify-center xl:w-fit">
                 <div class="img-wrapper w-[60%] md:w-fit xl:px-[72px]">
@@ -95,7 +99,11 @@
                     <br>
                     Jalur will help you find the nearest mosque based on your current location.
                 </p>
-                <a href="" class="underline font-semibold md:text-[16px] pb-[56px]">Learn More</a>
+                <a href=""
+                    class="font-[500] md:text-[16px] pb-[56px] hover:text-jalur-base decoration-jalur-base decoration-[2px] w-fit">Learn
+                    More
+                    <hr class="bg-jalur-base h-[3px]">
+                </a>
             </div>
             <div class="flex w-full justify-center xl:w-fit">
                 <div class="img-wrapper w-fit">
@@ -117,7 +125,11 @@
                     <br>
                     Your route and prayer times will then be recallibrated accordingly.
                 </p>
-                <a href="" class="underline font-semibold md:text-[16px] pb-[56px]">Learn More</a>
+                <a href=""
+                    class="font-[500] md:text-[16px] pb-[56px] hover:text-jalur-base decoration-jalur-base decoration-[2px] w-fit">Learn
+                    More
+                    <hr class="bg-jalur-base h-[3px]">
+                </a>
             </div>
             <div class="flex w-full justify-center xl:w-fit">
                 <div class="img-wrapper w-[60%] md:w-fit xl:px-[72px]">
@@ -140,7 +152,11 @@
                     If traffic condition change, Jalur will automatically recalculate suggested mosques for the closest
                     prayer time via notifications
                 </p>
-                <a href="" class="underline font-semibold md:text-[16px] pb-[56px]">Learn More</a>
+                <a href=""
+                    class="font-[500] md:text-[16px] pb-[56px] hover:text-jalur-base decoration-jalur-base decoration-[2px] w-fit">Learn
+                    More
+                    <hr class="bg-jalur-base h-[3px]">
+                </a>
             </div>
             <div class="flex w-full justify-center xl:w-fit">
                 <div class="img-wrapper w-[60%] md:w-fit xl:px-[72px]">

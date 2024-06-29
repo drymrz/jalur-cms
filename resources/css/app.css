@@ -1,7 +1,17 @@
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/regular.css';
+@import '@fortawesome/fontawesome-free/css/solid.css';
+@import '@fortawesome/fontawesome-free/css/brands.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 .main-wrapper-home{
     background: linear-gradient(176deg, #FFF 0%, #E1EEEB 34.01%, #FFF 49.56%, #E1EEEB 91.85%);
+}
+
+.jalur-linear-grad{
+    background: linear-gradient(150deg, #FFF 3.89%, #E1EEEB 65.11%);
 }

@@ -13,3 +13,7 @@ Route::get('/', function () {
 Route::get('/team', function () {
     return view('frontend.our-team.index');
 });
+
+Route::get('/download', function () {
+    return view('frontend.download.index');
+});

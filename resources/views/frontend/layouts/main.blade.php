@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Home - Jalur App</title>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     @include('frontend.partials.header')
-    <div class="main-wrapper-home pt-[64px] xl:pt-[80px] w-full">
+    <div class="pt-[64px] xl:pt-[80px] {{ Request::is('download') ? 'bg-[#E1EEEB]' : 'bg-white/[.80]' }} w-full">
         @yield('content')
     </div>
     @include('frontend.partials.footer')
+    @stack('scripts')
 </body>
 
 </html>

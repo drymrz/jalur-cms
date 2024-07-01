@@ -2,10 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
     return view('frontend.home.index');
 });
@@ -16,4 +12,12 @@ Route::get('/team', function () {
 
 Route::get('/download', function () {
     return view('frontend.download.index');
+});
+
+Route::get('/contact', function () {
+    return view('frontend.contact.index');
+});
+
+Route::get('/features/casenotification', function () {
+    return view('frontend.features.case-specific.index');
 });

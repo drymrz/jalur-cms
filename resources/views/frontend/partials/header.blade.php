@@ -1,28 +1,27 @@
 @php
-    $data = [
+    $dataFeatures = [
         [
             'icon' => 'fa-map-location-dot',
             'title' => 'Plan your trip',
             'description' => 'Make your trip plan, Jalur will find the mosque',
-            'link' => '#',
+            'link' => '/features/planyourtrip',
         ],
         [
             'icon' => 'fa-magnifying-glass',
             'title' => 'Find nearby mosque',
             'description' => 'Find the nearest mosque with Jalur',
-            'link' => '#',
+            'link' => '/features/findnearbymosque',
         ],
         [
             'icon' => 'fa-circle-exclamation',
             'title' => 'Case Notification',
             'description' => 'Get notification based on your case',
-            'link' => '#',
+            'link' => '/features/casenotification',
         ],
     ];
 @endphp
 
-<header
-    class="w-full h-[64px] xl:h-[80px] font-sans fixed z-[100] backdrop-blur-sm {{ Request::is('download') ? 'bg-[#E1EEEB]/[.80]' : 'bg-white/[.80]' }}">
+<header class="w-full h-[64px] xl:h-[80px] font-sans fixed z-[100] backdrop-blur-sm">
     <nav class="flex justify-between items-center px-[24px] xl:px-[40px] py-[14px]">
         <div class="xl:hidden mobile-nav">
             <button class="ham-btn xl:hidden" onclick="showMobileMenu()">
@@ -50,7 +49,7 @@
                                 id="feature-icon-mobile"></i></button>
                         <ul id="feature-menu-mobile"
                             class="overflow-hidden max-h-[0] transition-[max-height] ease-in-out duration-500">
-                            @foreach ($data as $item)
+                            @foreach ($dataFeatures as $item)
                                 <li class="">
                                     <a href="{{ $item['link'] }}" class="flex items-center mb-[16px]">
                                         <i
@@ -65,10 +64,11 @@
                         </ul>
                     </li>
                     <li class="border-y border-gray-300 pl-[24px]">
-                        <a href="/team" class="py-[20px] text-[32px] antialiased block">Our Team</a>
+                        <a href="/team" class="py-[20px] text-[32px] antialiased block">Our
+                            Team</a>
                     </li>
                     <li class="border-y border-gray-300 pl-[24px]">
-                        <a href="" class="py-[20px] text-[32px] antialiased block">Gallery</a>
+                        <a href="/contact" class="py-[20px] text-[32px] antialiased block">Contact</a>
                     </li>
                     <li class="border-y border-gray-300 pl-[24px]">
                         <a href="/download" class="py-[20px] text-[32px] antialiased block">Download</a>
@@ -80,14 +80,14 @@
             <img class="w-[80%]" src="/img/jalur-logo.svg" alt="jalur-logo">
         </a>
         <ul class="hidden xl:flex">
-            <li class="px-[20px]"><a href="/" class="font-[400]">Home</a></li>
+            <li class="px-[20px]"><a href="/" class="font-[400] hover:text-jalur-base">Home</a></li>
             <li class="px-[20px]">
                 <div>
-                    <button onclick="showFeatureMenu()">Features <i class="fa-solid fa-chevron-down text-[13px]"
-                            id="feature-icon"></i></button>
+                    <button class="hover:text-jalur-base" onclick="showFeatureMenu()">Features <i
+                            class="fa-solid fa-chevron-down text-[13px]" id="feature-icon"></i></button>
                     <div id="feature-menu" class="absolute w-screen left-0 top-[100%] bg-white hidden">
                         <ul class="flex w-full justify-center pb-[22px] pt-[16px] gap-[32px]">
-                            @foreach ($data as $item)
+                            @foreach ($dataFeatures as $item)
                                 <li class="my-[18px]">
                                     <a href="{{ $item['link'] }}"
                                         class="flex flex-col p-[24px] pb-[37px] rounded-[25px] border-[1px] border-gray-300 w-[275px] group hover:bg-jalur-bold hover:border-black">
@@ -105,9 +105,9 @@
                     </div>
                 </div>
             </li>
-            <li class="px-[20px]"><a href="/team" class="font-[400]">Our Team</a></li>
-            <li class="px-[20px]"><a href="" class="font-[400]">Gallery</a></li>
-            <li class="px-[20px]"><a href="/download" class="font-[400]">Download</a></li>
+            <li class="px-[20px]"><a href="/team" class="font-[400] hover:text-jalur-base">Our Team</a></li>
+            <li class="px-[20px]"><a href="/contact" class="font-[400] hover:text-jalur-base">Contact</a></li>
+            <li class="px-[20px]"><a href="/download" class="font-[400] hover:text-jalur-base">Download</a></li>
         </ul>
         <div class="download-button">
             <a href=""
@@ -120,27 +120,5 @@
 </header>
 
 @push('scripts')
-    <script>
-        function showMobileMenu() {
-            $('#mobile-menu').css('right') === '0px' ? $('#mobile-menu').css('right', '-100%') : $('#mobile-menu').css(
-                'right', '0');
-        }
-
-        function showFeatureMenu() {
-            $('#feature-icon').toggleClass('rotate-180');
-            $('#feature-menu').toggle();
-
-            $('#feature-menu').is(':visible') ? $('header').addClass('bg-white/[1]') : $('header').removeClass(
-                'bg-white/[1]');
-        }
-
-        function showMobileFeatureMenu() {
-            $('#feature-menu-mobile').css('max-height') === '0px' ? $('#feature-menu-mobile').css('max-height',
-                '150px') : $('#feature-menu-mobile').css('max-height', '0px');
-
-            $('#feature-menu-mobile').css('max-height') !== '0px' ? $('#feature-icon-mobile').addClass('fa-chevron-down')
-                .removeClass('fa-chevron-up') : $('#feature-icon-mobile').addClass('fa-chevron-up').removeClass(
-                    'fa-chevron-down');
-        }
-    </script>
+    <script src="/js/header.js"></script>
 @endpush

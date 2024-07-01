@@ -12,6 +12,7 @@ export default {
                     bold: "#61938E",
                     bold2: "#4D7571",
                     dark: "#0D544D",
+                    soft: "#E1EEEB",
                 },
             },
         },

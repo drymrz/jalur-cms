@@ -26,7 +26,7 @@
 
 @extends('frontend.layouts.main')
 @section('content')
-    <section class="xl:pb-[56px] pb-[32px] pt-[48px] w-screen bg-[#E1EEEB]" data-aos="fade-up" data-aos-duration="1500"
+    <section class="xl:pb-[56px] pb-[32px] pt-[48px] w-screen bg-jalur-soft" data-aos="fade-up" data-aos-duration="1500"
         data-aos-once="true">
         <div
             class="section-wrapper flex flex-col xl:flex-row justify-between xl:items-center xl:mx-auto max-w-[1056px] px-[24px] md:px-[32px] xl:px-0">
@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <section class="xl:pb-[72px] xl:pt-[108px] pt-[56px] pb-[48px] w-screen bg-white">
+    <section class="xl:pb-[72px] xl:pt-[108px] pt-[56px] pb-[48px] w-screen bg-white min-h-[52vh]">
         <div
             class="section-wrapper flex flex-col xl:flex-row justify-between xl:mx-auto max-w-[1056px] px-[24px] md:px-[32px] xl:px-0">
             <div class="text-wrapper flex gap-[18px] flex-col basis-2/5">
@@ -73,7 +73,8 @@
                         <div class="version-header flex items-center justify-between">
                             <h3 class="text-[20px] font-[600]">v{{ $item['version'] }}</h3>
                             <p class="text-[14px
-                                ] text-gray-500">{{ $item['date'] }}</p>
+                                ] text-gray-500">{{ $item['date'] }}
+                            </p>
                         </div>
                         <div class="version-content">
                             <p class="text-[14px]">{{ $item['content'] }}</p>

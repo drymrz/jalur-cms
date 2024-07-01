@@ -179,5 +179,22 @@
                 </div>
             </div>
         </section>
+
+        <section class="hero-section p-[16px] pb-[56px] md:p-[32px] md:pb-[56px] w-full">
+            <div class="section-wrapper relative w-full">
+                <div class="text-wrapper w-full py-[56px] xl:py-[32px] flex flex-col gap-[16px] items-center text-center"
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+                    <h1 class="text-[36px] md:text-[48px] font-[500] leading-[1] md:leading-[72px]">App
+                        Presentation Video
+                    </h1>
+                </div>
+                <div class="vid-wrapper" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+                    <iframe class="mx-auto w-[80%] md:h-[500px]" src="https://www.youtube.com/embed/Ke6xMFvuvNo"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
     </div>
 @endsection

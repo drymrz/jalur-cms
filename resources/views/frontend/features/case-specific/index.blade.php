@@ -30,20 +30,20 @@
             </div>
         </section>
         <section class="flex flex-col gap-[48px] items-center justify-center pt-[32px] py-[64px]">
-            @foreach ($dataNotification as $item)
+            @foreach ($features as $item)
                 <div class="card-wrapper w-[70%]" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
                     <div
-                        class="card p-[32px] md:py-[64px] md:px-[86px] flex flex-col-reverse @if ($loop->index % 2 == 0) md:flex-row @else md:flex-row-reverse @endif items-center bg-jalur-soft rounded-[16px] overflow-hidden">
+                        class="card p-[32px] md:py-[64px] md:px-[86px] flex flex-col-reverse @if ($loop->odd) md:flex-row @else md:flex-row-reverse @endif items-center bg-jalur-soft rounded-[16px] overflow-hidden">
                         <div class="text-wrapper basis-1/2 flex">
                             <h1
                                 class="text-[14px] mt-[12px] md:mt-0 md:text-[24px] xl:text-[32px] font-medium md:leading-[30px] xl:leading-[35px] text-center md:text-start">
-                                {{ $item['description'] }}
+                                {{ $item->title }}
                             </h1>
                         </div>
                         <div
                             class="img-wrapper basis-1/2 max-h-[120px] xl:max-h-[180px] overflow-hidden md:overflow-visible">
-                            <img src="{{ $item['img'] }}"
-                                class="md:-mt-[32px] @if ($loop->index % 2 == 0) float-right @endif" alt="">
+                            <img src="{{ $item->image }}"
+                                class="md:-mt-[32px] @if ($loop->odd) float-right @endif" alt="">
                         </div>
                     </div>
                 </div>

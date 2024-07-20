@@ -21,7 +21,12 @@
     ];
 @endphp
 
-<header class="w-full h-[64px] xl:h-[80px] font-sans fixed z-[100] backdrop-blur-sm">
+@php
+    use App\Models\WebSetting;
+    $settings = WebSetting::first();
+@endphp
+
+<header class="w-full h-[64px] xl:h-[80px] font-sans fixed z-[100] backdrop-blur-sm bg-opacity-80">
     <nav class="flex justify-between items-center px-[24px] xl:px-[40px] py-[14px]">
         <div class="xl:hidden mobile-nav">
             <button class="ham-btn xl:hidden" onclick="showMobileMenu()">
@@ -29,7 +34,8 @@
             </button>
             <nav id="mobile-menu"
                 class="xl:hidden flex flex-col fixed w-screen top-0 h-screen right-[-100%] bg-white transition-[right] ease-in-out duration-500">
-                <img class="absolute w-[75px] left-[40%] top-7 md:left-[45%]" src="/img/jalur-logo.svg" alt="">
+                <img class="absolute w-[75px] left-[40%] top-7 md:left-[45%]" src={{ '/img/' . $settings->logo_image }}
+                    alt="">
                 <button class="absolute top-[30px] left-[8%] md:left-[24px]" onclick="showMobileMenu()">
                     <svg width="16" height="16" fill="none" class="_9s6z">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -77,7 +83,7 @@
             </nav>
         </div>
         <a href="/" class="logo flex justify-center">
-            <img class="w-[80%]" src="/img/jalur-logo.svg" alt="jalur-logo">
+            <img class="w-[80%]" src={{ '/img/' . $settings->logo_image }} alt="jalur-logo">
         </a>
         <ul class="hidden xl:flex">
             <li class="px-[20px]"><a href="/" class="font-[400] hover:text-jalur-base">Home</a></li>
@@ -110,8 +116,9 @@
             <li class="px-[20px]"><a href="/download" class="font-[400] hover:text-jalur-base">Download</a></li>
         </ul>
         <div class="download-button">
-            <a href=""
-                class="flex gap-[16px] xl:px-[29px] xl:py-[14px] p-[8px] bg-jalur-bold hover:bg-jalur-base text-black rounded-[50px] border border-black">
+            <a href={{ $settings->download_link }}
+                class="flex gap-[16px] xl:px-[29px] xl:py-[14px] p-[8px] bg-jalur-bold hover:bg-jalur-base text-black rounded-[50px] border border-black"
+                target="_blank">
                 <span class="hidden xl:block">Download</span>
                 <img src="/icons/arrow-down.svg" alt="download-icon">
             </a>

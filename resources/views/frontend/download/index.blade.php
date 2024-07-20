@@ -1,29 +1,3 @@
-@php
-    //version data
-    $data = [
-        [
-            'version' => '1.0.4',
-            'date' => '5 day ago',
-            'content' => 'Fixing minor bugs',
-        ],
-        [
-            'version' => '1.0.3',
-            'date' => '2 week ago',
-            'content' => 'Add analytics tools and minor updates',
-        ],
-        [
-            'version' => '1.0.2',
-            'date' => '2 month ago',
-            'content' => 'Localization: User can choose their preferred Language.',
-        ],
-        [
-            'version' => '1.0.1',
-            'date' => '6 month ago',
-            'content' => 'UI Improve, Fix endless loading and other bugs',
-        ],
-    ];
-@endphp
-
 @extends('frontend.layouts.main')
 @section('content')
     <section class="xl:pb-[56px] pb-[32px] pt-[48px] w-screen bg-jalur-soft" data-aos="fade-up" data-aos-duration="1500"
@@ -33,24 +7,21 @@
             <div class="text-wrapper flex gap-[18px] flex-col basis-2/5">
                 <h1
                     class="text-[32px] md:text-[48px] md:max-w-[50%] xl:max-w-fit leading-[1] xl:text-[60px] xl:leading-[60px]">
-                    Download Jalur</h1>
-                <p class="md:text-[16px] md:max-w-[55%] xl:max-w-fit">Jalur is available on the App Store, whether you
-                    are an
-                    occupational driver or just taking your
-                    family on the long drive. Jalur helps you in practicing your faith during the prayer time.
+                    {{ $heroes->title }}</h1>
+                <p class="md:text-[16px] md:max-w-[55%] xl:max-w-fit">{{ $heroes->description }}
                 </p>
                 <div class="flex flex-col p-[32px] bg-[#F0F4F9] rounded-[16px] mt-[24px] max-w-fit">
                     <p class="text-[18px] font-[400]">Mobile</p>
                     <h3 class="text-[32px]">iOS</h3>
                     <p class="pt-[4px]">Version 1.0.4 Requires iOS 17.0 or newer.</p>
-                    <a href="" class="pt-[8px]">
+                    <a href={{ $websetting->download_link }} target="_blank" class="pt-[8px]">
                         <img class="w-[150px]" src="/img/appstore.svg" alt="">
                     </a>
                 </div>
             </div>
             <div class="xl:flex w-full justify-center xl:w-fit hidden">
                 <div class="img-wrapper w-[60%] md:w-fit xl:px-[72px]">
-                    <img src="/img-feature/jalur-main.svg" alt="">
+                    <img src="{{ $heroes->image }}" alt="">
                 </div>
             </div>
         </div>
@@ -68,16 +39,18 @@
                 </p>
             </div>
             <div class="version-wrapper xl:w-[40%] pt-[24px] xl:pt-0">
-                @foreach ($data as $item)
+                @foreach ($versions as $version)
                     <div class="version-card border-b-[1px] border-gray-200 px-[8px] py-[16px]">
                         <div class="version-header flex items-center justify-between">
-                            <h3 class="text-[20px] font-[600]">v{{ $item['version'] }}</h3>
+                            <h3 class="text-[20px] font-[600]">v{{ $version['version_number'] }}</h3>
                             <p class="text-[14px
-                                ] text-gray-500">{{ $item['date'] }}
+                                ] text-gray-500">
+                                {{-- convert date format to display the date like 2 days ago --}}
+                                {{ \Carbon\Carbon::parse($version['release_date'])->diffForHumans() }}
                             </p>
                         </div>
                         <div class="version-content">
-                            <p class="text-[14px]">{{ $item['content'] }}</p>
+                            <p class="text-[14px]">{{ $version['content'] }}</p>
                         </div>
                     </div>
                 @endforeach

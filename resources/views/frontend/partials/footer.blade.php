@@ -1,7 +1,11 @@
+@php
+    use App\Models\WebSetting;
+    $settings = WebSetting::first();
+@endphp
 <footer
     class="w-screen flex items-center justify-center bg-jalur-dark h-fit py-[32px] xl:py-[24px] px-[24px] text-white relative bottom-0">
     <div class="wrapper w-[75%] flex flex-col md:flex-row gap-[32px] justify-between items-center">
-        <img src="/img/jalur-white.svg" class="w-[100px]" alt="">
+        <img src={{ '/img/' . $settings->alternate_logo_image }} class="w-[100px]" alt="">
         <p class="text-[13px]">2024 © Jalur HTM. All rights reserved.</p>
         <div class="select-wrapper relative">
             <select name="" id=""

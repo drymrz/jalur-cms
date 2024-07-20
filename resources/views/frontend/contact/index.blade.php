@@ -4,26 +4,26 @@
         <section
             class="w-screen md:w-[70vw] md:min-h-[88vh] xl:min-h-[80vh] flex flex-col xl:flex-row mx-auto py-[64px] gap-[64px] px-[24px] md:px-0">
             <div class="text-wrapper basis-1/2">
-                <h1 class="text-[42px] font-[500]">Get in touch</h1>
-                <p class="text-[18px] antialiased">Have a question or want to work together? We'd love to hear from you. Send
-                    us a
-                    message and we'll respond
-                    as soon as possible.</p>
+                <h1 class="text-[42px] font-[500]">{{ $heroes->title }}</h1>
+                <p class="text-[18px] antialiased">{{ $heroes->description }}</p>
 
-                <a href="" class="block font-semibold mt-[12px]"><span class="underline">Find us on
+                <a href={{ $websetting->instagram_link }} target="_blank" class="block font-semibold mt-[12px]"><span
+                        class="underline">Find
+                        us on
                         Instagram</span></a>
             </div>
             <div class="form-wrapper basis-1/2">
-                <form action="" class="grid grid-cols-2 gap-[16px]">
+                <form action="/admin/contactin" method="POST" class="grid grid-cols-2 gap-[16px]">
+                    @csrf
                     <div class="flex flex-col gap-[4px]">
                         <label for="name" class="text-[14px] font-medium">First Name</label>
                         <input class="pl-[12px] py-[6px] rounded-[10px] border-[1px] border-gray-200" type="text"
-                            id="first-name" name="first-name" class="input" placeholder="First name">
+                            id="first-name" name="firstname" class="input" placeholder="First name">
                     </div>
                     <div class="flex flex-col gap-[4px]">
                         <label for="name" class="text-[14px] font-medium">Last Name</label>
                         <input class="pl-[12px] py-[6px] rounded-[10px] border-[1px] border-gray-200" type="text"
-                            id="last-name" name="last-name" class="input" placeholder="Last name">
+                            id="last-name" name="lastname" class="input" placeholder="Last name">
                     </div>
                     <div class="flex flex-col col-span-2 gap-[4px]">
                         <label for="email" class="text-[14px] font-medium">Email</label>

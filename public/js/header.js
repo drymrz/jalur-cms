@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let route = $(location).attr("pathname");
     if (route === "/download") {
         $("#bg").addClass("bg-jalur-soft");
-        $("header").addClass("bg-jalur-soft/[.80]");
+        $("header").addClass("bg-jalur-soft");
     } else if (route === "/features/casenotification") {
         $("#bg").addClass("bg-jalur-bold2");
-        $("header").addClass("bg-jalur-bold2/[.80]");
+        $("header").addClass("bg-jalur-bold2");
     } else {
         $("#bg").addClass("bg-white");
-        $("header").addClass("bg-white/[.80]");
+        $("header").addClass("bg-white");
     }
 });
 

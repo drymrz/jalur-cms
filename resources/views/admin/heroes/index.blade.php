@@ -15,7 +15,7 @@
                             <!-- Parent Link -->
                             <li class="inline-flex items-center">
                                 <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group"
-                                    href="index.html">
+                                    href="/admin">
                                     <i
                                         class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Admin</a>
                             </li>
@@ -54,11 +54,11 @@
                         </div>
                         <!-- Blog Title -->
                         <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                            <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary"
+                            <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary line-clamp-1"
                                 href="/admin/heroes/{{ $hero->slug }}/edit">{{ $hero->title }}</a>
                         </h2>
                         <!-- Blog Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">{{ $hero->description }}</p>
+                        <p class="mb-4 text-base text-dark dark:text-title-dark line-clamp-2">{{ $hero->description }}</p>
                     </figcaption>
                 </figure>
 

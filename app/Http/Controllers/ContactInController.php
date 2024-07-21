@@ -15,6 +15,7 @@ class ContactInController extends Controller
     {
         return view('admin.contactin.index', [
             'contactIns' => ContactIn::all(),
+            'title' => 'Contact In'
         ]);
     }
 
@@ -23,6 +24,7 @@ class ContactInController extends Controller
         return view('frontend.contact.index', [
             'websetting' => \App\Models\WebSetting::first(),
             'heroes' => \App\Models\HeroSection::where('type_id', 3)->first(),
+            'title' => 'Contact Us'
         ]);
     }
 

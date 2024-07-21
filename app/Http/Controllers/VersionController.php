@@ -14,7 +14,8 @@ class VersionController extends Controller
     public function index()
     {
         return view('admin.versions.index', [
-            'versions' => Version::orderBy('release_date', 'desc')->get()
+            'versions' => Version::orderBy('release_date', 'desc')->get(),
+            'title' => 'Versions'
         ]);
     }
 
@@ -23,7 +24,8 @@ class VersionController extends Controller
         return view('frontend.download.index', [
             'versions' => Version::orderBy('release_date', 'desc')->get()->take(4),
             'websetting' => \App\Models\WebSetting::first(),
-            'heroes' => \App\Models\HeroSection::where('type_id', 4)->first()
+            'heroes' => \App\Models\HeroSection::where('type_id', 4)->first(),
+            'title' => 'Download'
         ]);
     }
 

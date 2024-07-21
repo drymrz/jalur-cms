@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Home - Jalur App</title>
+    @php
+        $webSetting = App\Models\WebSetting::first();
+    @endphp
+    <title>{{ $title }} - {{ $webSetting->web_title }}</title>
 </head>
 
 <body class="overflow-x-hidden">

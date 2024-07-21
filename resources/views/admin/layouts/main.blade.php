@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contacts</title>
+    @php
+        $webSetting = App\Models\WebSetting::first();
+    @endphp
+    <title>{{ $title }} - Admin {{ $webSetting->web_title }}</title>
 
     <link rel="stylesheet" href="/assets/admin/vendor_assets/css/apexcharts.min.css">
     <link rel="stylesheet" href="/assets/admin/vendor_assets/css/datepicker.min.css">
@@ -13,6 +16,7 @@
     <link rel="stylesheet" href="/assets/admin/vendor_assets/css/nouislider.min.css">
     <link rel="stylesheet" href="/assets/admin/vendor_assets/css/quill.snow.css">
     <link rel="stylesheet" href="/assets/admin/vendor_assets/css/svgMap.min.css">
+    <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">

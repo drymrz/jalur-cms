@@ -16,6 +16,7 @@ class TeamController extends Controller
     {
         return view('admin.teams.index', [
             'teams' => Team::all(),
+            'title' => 'Teams'
         ]);
     }
 
@@ -23,7 +24,8 @@ class TeamController extends Controller
     {
         return view('frontend.our-team.index', [
             'teams' => Team::all(),
-            'heroes' => \App\Models\HeroSection::where('type_id', 2)->first()
+            'heroes' => \App\Models\HeroSection::where('type_id', 2)->first(),
+            'title' => 'Our Team'
         ]);
     }
 
@@ -58,7 +60,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        dd($team);
+        //
     }
 
     /**
@@ -68,6 +70,7 @@ class TeamController extends Controller
     {
         return view('admin.teams.edit', [
             'team' => $team,
+            'title' => $team->name
         ]);
     }
 

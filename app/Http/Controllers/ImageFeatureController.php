@@ -16,7 +16,8 @@ class ImageFeatureController extends Controller
     {
         return view('admin.imagefeatures.index', [
             'imageFeatures' => ImageFeature::all()->sortBy('type_id'),
-            'types'  => Type::whereNotIn('id', [2, 3, 4])->get()
+            'types'  => Type::whereNotIn('id', [2, 3, 4])->get(),
+            'title' => 'Feature Images'
         ]);
     }
 

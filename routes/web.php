@@ -16,6 +16,7 @@ Route::get('/', function () {
         'websetting' => \App\Models\WebSetting::first(),
         'heroes' => \App\Models\HeroSection::where('type_id', 1)->first(),
         'features' => \App\Models\ImageFeature::where('type_id', 1)->get(),
+        'title' => "Home"
     ]);
 });
 
@@ -28,6 +29,15 @@ Route::get('/contact', [ContactInController::class, 'frontendIndex']);
 Route::get('/features/casenotification', function () {
     return view('frontend.features.case-specific.index', [
         'features' => \App\Models\ImageFeature::where('type_id', 7)->get(),
+        'title' => "Case Notification"
+    ]);
+});
+
+Route::get('/features/planyourtrip', function () {
+    return view('frontend.features.plan-your-trip.index', [
+        'heroes' => \App\Models\HeroSection::where('type_id', 5)->first(),
+        'features' => \App\Models\ImageFeature::where('type_id', 5)->get(),
+        'title' => "Plan Your Trip"
     ]);
 });
 

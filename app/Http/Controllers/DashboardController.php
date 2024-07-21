@@ -14,6 +14,7 @@ class DashboardController extends Controller
     {
         return view('admin.index', [
             'versions' => Version::all()->sortByDesc('created_at'),
+            'title' => 'Dashboard'
         ]);
     }
 

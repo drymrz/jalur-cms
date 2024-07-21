@@ -15,7 +15,7 @@
                             <!-- Parent Link -->
                             <li class="inline-flex items-center">
                                 <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group"
-                                    href="index.html">
+                                    href="/admin">
                                     <i
                                         class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Admin</a>
                             </li>
@@ -64,7 +64,7 @@
                             alt="presentation web-design">
                         <figcaption>
                             <div class="px-6 py-5">
-                                <h1 class="text-15 font-medium mb-0.5 text-dark dark:text-title-dark">
+                                <h1 class="text-15 font-medium mb-0.5 text-dark dark:text-title-dark line-clamp-1">
                                     {{ $imageFeature->title }}
                                 </h1>
                                 <p class="mb-0 text-light dark:text-subtitle-dark text-13 line-clamp-2">

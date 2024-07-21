@@ -16,7 +16,7 @@
                             <!-- Parent Link -->
                             <li class="inline-flex items-center">
                                 <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group"
-                                    href="index.html">
+                                    href="/admin">
                                     <i
                                         class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Admin</a>
                             </li>
@@ -44,17 +44,19 @@
         </div>
     </div>
     @if ($hero->type->name != 'Download')
-        <form>
+        <form action="/admin/heroes/{{ $hero['slug'] }}" method="POST" enctype="multipart/form-data">
+            @method('PUT')
+            @csrf
             <div class="grid grid-cols-12 sm:gap-[25px] gap-y-[25px]">
                 <div class="col-span-12">
                     @if ($hero->image)
                         <div class="relative z-[1] bg-dark rounded-10 w-full flex mb-[25px]" data-te-ripple-init
                             data-te-ripple-color="dark">
-                            <img id="profile-upload-image"
+                            <img id="heroes-upload-image"
                                 class="w-full sm:min-h-[350px] sm:max-h-[350px] object-cover rounded-10"
                                 src={{ $hero->image }} alt="banner">
                             <div class="absolute rounded-md top-[15px] end-[15px]">
-                                <label id="profile-uploader" for="profile-dropzone-file"
+                                <label id="profile-uploader" for="heroes-image-dropzone-file"
                                     class="flex flex-col items-center justify-center px-4 py-2 transition duration-150 ease-linear border-white border-solid rounded-lg cursor-pointer border-1 xs:px-3 border-opacity-30 hover:bg-white hover:text-dark group">
                                     <div class="flex flex-col items-center justify-center">
                                         <p class="text-white gap-[8px] group-hover:text-dark"><i
@@ -62,7 +64,7 @@
                                             Change
                                             Image</p>
                                     </div>
-                                    <input id="profile-dropzone-file" type="file" class="hidden" />
+                                    <input id="heroes-image-dropzone-file" type="file" class="hidden" name="image" />
                                 </label>
                             </div>
                         </div>
@@ -104,7 +106,7 @@
                                                     2:</label>
                                                 <input type="text" id="title"
                                                     class="w-full rounded-6 border-regular border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark focus:ring-primary focus:border-primary"
-                                                    placeholder="Duran Clayton" autocomplete="off" name="title"
+                                                    placeholder="Duran Clayton" autocomplete="off" name="title_2"
                                                     value="{{ $hero->title_2 }}" required>
                                             </div>
                                         @endif
@@ -147,11 +149,11 @@
                         @if ($hero->image)
                             <div class="relative z-[1] bg-dark rounded-10 w-full flex mb-[25px]" data-te-ripple-init
                                 data-te-ripple-color="dark">
-                                <img id="profile-upload-image"
+                                <img id="heroes-upload-image"
                                     class="w-full sm:min-h-[350px] sm:max-h-fit object-cover rounded-10"
                                     src={{ $hero->image }} alt="banner">
                                 <div class="absolute rounded-md top-[15px] end-[15px]">
-                                    <label id="profile-uploader" for="profile-dropzone-file"
+                                    <label id="profile-uploader" for="heroes-image-dropzone-file"
                                         class="flex flex-col items-center justify-center px-4 py-2 transition duration-150 ease-linear border-white border-solid rounded-lg cursor-pointer border-1 xs:px-3 border-opacity-30 hover:bg-white hover:text-dark group">
                                         <div class="flex flex-col items-center justify-center">
                                             <p class="text-white gap-[8px] group-hover:text-dark"><i
@@ -159,7 +161,8 @@
                                                 Change
                                                 Image</p>
                                         </div>
-                                        <input id="profile-dropzone-file" type="file" class="hidden" />
+                                        <input id="heroes-image-dropzone-file" type="file" class="hidden"
+                                            name="image" />
                                     </label>
                                 </div>
                             </div>
@@ -205,7 +208,7 @@
                                                         2:</label>
                                                     <input type="text" id="title"
                                                         class="w-full rounded-6 border-regular border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark focus:ring-primary focus:border-primary"
-                                                        placeholder="Duran Clayton" autocomplete="off" name="title"
+                                                        placeholder="Duran Clayton" autocomplete="off" name="title_2"
                                                         value="{{ $hero->title_2 }}" required>
                                                 </div>
                                             @endif
@@ -241,4 +244,10 @@
             </div>
         </form>
     @endif
+
+    @push('scripts')
+        <script>
+            localStorage.removeItem('heroLogoImage');
+        </script>
+    @endpush
 @endsection

@@ -14,7 +14,8 @@ class WebSettingController extends Controller
     public function index()
     {
         return view('admin.websetting.index', [
-            'webSetting' => WebSetting::first()
+            'webSetting' => WebSetting::first(),
+            'title' => 'Website Setting'
         ]);
     }
 

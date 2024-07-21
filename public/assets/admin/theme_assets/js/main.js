@@ -1800,6 +1800,11 @@ function content_ready_scripts() {
         "altlogo-image-dropzone-file",
         "alternateLogoImage"
     );
+    imageUpload(
+        "heroes-upload-image",
+        "heroes-image-dropzone-file",
+        "heroLogoImage"
+    );
     socialPost();
     customTab(".tabs", '[role="tab"]', '[role="tabpanel"]');
     followButtons(".follow-button", "active", "follow", "following");

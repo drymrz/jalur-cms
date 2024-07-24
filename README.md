@@ -58,7 +58,13 @@ Seed the database
   php artisan migrate --seed
 ```
 
-Start the server
+Start the Node Server
+
+```bash
+  npm run dev
+```
+
+Start the Laravel Server
 
 ```bash
   php artisan serve

@@ -6,17 +6,8 @@
                  <!-- Copyright information -->
                  <div
                      class="flex items-center gap-[4px] text-[14px] font-medium max-md:text-center text-body dark:text-subtitle-dark">
-                     © <span class="current-year">2022</span> <a href="#" class="text-primary">SovWare</a></div>
-
-                 <!-- Footer navigation links -->
-                 <div class="justify-end md:justify-center items-center flex gap-[15px]">
-                     <a href="#"
-                         class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">About</a>
-                     <a href="#"
-                         class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">Team</a>
-                     <a href="#"
-                         class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">Contact</a>
-                 </div>
+                     © <span class="current-year">2022</span> <a href="https://drymrz.tech" target="_blank"
+                         class="text-primary">Adry
+                         Mirza</a></div>
              </div>
-
          </footer>

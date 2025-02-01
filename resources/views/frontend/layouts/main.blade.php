@@ -11,6 +11,7 @@
         $webSetting = App\Models\WebSetting::first();
     @endphp
     <title>{{ $title }} - {{ $webSetting->web_title }}</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body class="overflow-x-hidden">
